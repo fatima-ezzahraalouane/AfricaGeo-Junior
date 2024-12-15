@@ -54,11 +54,11 @@ VALUES
 INSERT INTO ville (nom, description, type, id_pays, imageURL)  
 VALUES  
 ('Rabat', 'Capitale administrative du Maroc', 'Capitale', 1, 'https://strongcitiesnetwork.org/wp-content/uploads/2023/05/R-3.jpg'),  
-('Casablanca', 'Ville économique du Maroc', 'Autre', 1),  
-('Safi', 'Ville portuaire connue pour la pêche et la poterie', 'Autre', 1),
-('Marrakech', 'Ville touristique célèbre pour sa médina et ses souks', 'Autre', 1), 
-('Fès', 'Ville historique connue pour sa médina et ses universités', 'Autre', 1),
-('Tanger', 'Ville portuaire stratégique reliant l\'Europe et l\'Afrique', 'Autre', 1);
+('Casablanca', 'Ville économique du Maroc', 'Autre', 1, 'https://a.travel-assets.com/findyours-php/viewfinder/images/res70/469000/469964-Hassan-Ii-Mosque.jpg'),  
+('Safi', 'Ville portuaire connue pour la pêche et la poterie', 'Autre', 1, 'https://www.rivagesdumonde.fr/media/contentmanager/content/repeater_block_media_layout/images/550x400_Maroc-Safi%C2%A9Poszt%C3%B3s-J%C3%A1nos-AdobeStock_360773507_Editorial_Use_Only-1.jpg'),
+('Marrakech', 'Ville touristique célèbre pour sa médina et ses souks', 'Autre', 1, 'https://www.belivehotels.com/imagenes/landings-tematicas/vacaciones_marrakech_jardines_menara_1_1600x1090.jpg'), 
+('Fès', 'Ville historique connue pour sa médina et ses universités', 'Autre', 1, 'https://riad-layalina-fes.com/wp-content/uploads/vue-mosquee-quaraouiyine-650x500.jpg'),
+('Tanger', 'Ville portuaire stratégique reliant l\'Europe et l\'Afrique', 'Autre', 1, 'https://www.barcelo.com/guia-turismo/wp-content/uploads/2022/01/tanger-chefchaouen-888.jpg');
 
 -- Insertion des villes associées aux pays
 INSERT INTO ville (nom, description, type, id_pays)

@@ -140,57 +140,52 @@ https://templatemo.com/tm-580-woox-travel
   </header>
   <!-- ***** Header Area End ***** -->
 
-  <div class="page-heading">
+  <div class="second-page-heading">
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <h4>Discover Our Weekly Offers</h4>
-          <h2>Amazing Prices &amp; More</h2>
+          <h4>Ajoutez des pays et des villes</h4>
+          <h2>Avec leurs informations essentielles</h2>
           <!-- <div class="border-button"><a href="about.html">Discover More</a></div> -->
         </div>
       </div>
     </div>
   </div>
 
-  <?php 
-  require 'conn/db.php';
-  $query ="select * from pays";
-  $result = mysqli_query($conn,$query);
-?>
+
 
 
   <!-- Formulaires -->
   <div class="container my-5">
     <div class="row g-4">
       <div class="col-lg-6">
-        <form action="" method="POST" class="p-4 bg-light rounded"
+        <form action="ajouter.php" method="POST" class="p-4 bg-light rounded"
           style="background-image:url(./assets/images/upscaled.jpg)">
           <h1 class="text-center text-white">Pays</h1>
           <div class="mb-3">
             <label for="nom" class="form-label">Nom</label>
-            <input type="text" class="form-control" id="nom" name="nom" placeholder="Nom">
+            <input type="text" class="form-control" id="nom" name="nom" placeholder="Nom" required>
           </div>
           <div class="mb-3">
             <label for="population" class="form-label">Population</label>
-            <input type="number" class="form-control" id="population" name="population" placeholder="Population">
+            <input type="number" class="form-control" id="population" name="population" placeholder="Population" required>
           </div>
           <div class="mb-3">
             <label for="langues" class="form-label">Langues</label>
-            <input type="text" class="form-control" id="langues" name="langues" placeholder="Langues">
+            <input type="text" class="form-control" id="langues" name="langues" placeholder="Langues" required>
           </div>
           <div class="mb-3">
             <label for="imageURL" class="form-label">Image</label>
-            <input type="url" class="form-control" id="imageURL" name="imageURL" placeholder="URL de l'Image">
+            <input type="url" class="form-control" id="imageURL" name="imageURL" placeholder="URL de l'Image" required>
           </div>
           <div class="mb-3">
             <label for="description" class="form-label">Description</label>
             <!-- <input type="text" class="form-control" id="description" name="description" placeholder="Description"> -->
-            <textarea for="description" name="description" id="description" class="form-control" placeholder="Votre description ..."></textarea>
+            <textarea for="description" name="description" id="description" class="form-control" placeholder="Votre description ..." required></textarea>
           </div>
           <div class="mb-3">
             <label for="id_continent">Continent</label>
-            <select name="id_continent" id="id_continent" class="form-select">
-              <!-- <option value="1">Afrique</option> -->
+            <select name="id_continent" id="id_continent" class="form-select" required>
               <?php
                   $query = "SELECT id_continent, nom FROM continent";
                   $result = mysqli_query($conn, $query);
@@ -205,21 +200,20 @@ https://templatemo.com/tm-580-woox-travel
       </div>
 
       <div class="col-lg-6">
-        <form action="" method="POST" class="p-4 bg-light rounded"
+        <form action="ajouter.php" method="POST" class="p-4 bg-light rounded"
           style="background-image:url(./assets/images/upscaled.jpg)">
           <h1 class="text-center text-white">Villes</h1>
           <div class="mb-3">
             <label for="nom" class="form-label">Nom</label>
-            <input type="text" class="form-control" id="nom" name="nom" placeholder="Nom">
+            <input type="text" class="form-control" id="nom" name="nom" placeholder="Nom" required>
           </div>
           <div class="mb-3">
             <label for="description" class="form-label">Description</label>
-            <!-- <input type="text" class="form-control" id="description" name="description" placeholder="Description"> -->
-             <textarea for="description" name="description" id="description" class="form-control" placeholder="Votre description ..."></textarea>
+             <textarea for="description" name="description" id="description" class="form-control" placeholder="Votre description ..." required></textarea>
           </div>
           <div class="mb-3">
             <label for="id_pays">Pays</label>
-            <select id="id_pays" name="id_pays" class="form-select">
+            <select id="id_pays" name="id_pays" class="form-select" required>
               <?php
                   $query = "SELECT id_pays, nom FROM pays";
                   $result = mysqli_query($conn, $query);
@@ -231,11 +225,11 @@ https://templatemo.com/tm-580-woox-travel
           </div>
           <div class="mb-3">
             <label for="imageURL" class="form-label">Image</label>
-            <input type="url" class="form-control" id="imageURL" name="imageURL" placeholder="URL de l'Image">
+            <input type="url" class="form-control" id="imageURL" name="imageURL" placeholder="URL de l'Image" required>
           </div>
           <div class="mb-3">
             <label for="type" class="form-se">Type</label>
-            <select name="type" id="type" class="form-select">
+            <select name="type" id="type" class="form-select" required>
               <option value="capitale">Capitale</option>
               <option value="autre">Autre</option>
             </select>

@@ -1,3 +1,21 @@
+<?php 
+require './conn/db.php';
+
+// Vérifiez si le formulaire a été soumis
+$villes_result = null;
+$query = "SELECT * FROM ville";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['Location'])) {
+    $pays_id = mysqli_real_escape_string($conn, $_POST['Location']);
+
+    // Requête pour récupérer les villes correspondant au pays sélectionné
+    $query = "SELECT * FROM ville WHERE id_pays = '$pays_id'";
+}
+$villes_result = mysqli_query($conn, $query);
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,28 +68,28 @@ https://templatemo.com/tm-580-woox-travel
   <!-- ***** Header Area Start ***** -->
   <header class="header-area header-sticky">
     <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <nav class="main-nav">
-                    <!-- ***** Logo Start ***** -->
-                    <a href="index.php" class="logo">
-                        <img src="assets/images/removebg-preview.png" style="height: 75px; width: 75px; margin-top: -2px;" alt="">
-                    </a>
-                    <!-- ***** Logo End ***** -->
-                    <!-- ***** Menu Start ***** -->
-                    <ul class="nav">
-                        <li><a href="index.php">Home</a></li>
-                        <li><a href="ajouter.php">Ajouter</a></li>
-                        <li><a href="villes.php"  class="active">Villes</a></li>
-                        <!-- <li><a href="deals.html">Deals</a></li> -->
-                    </ul>   
-                    <a class='menu-trigger'>
-                        <span>Menu</span>
-                    </a>
-                    <!-- ***** Menu End ***** -->
-                </nav>
-            </div>
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="index.php" class="logo">
+              <img src="assets/images/removebg-preview.png" style="height: 75px; width: 75px; margin-top: -2px;" alt="">
+            </a>
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li><a href="index.php">Home</a></li>
+              <li><a href="ajouter.php">Ajouter</a></li>
+              <li><a href="villes.php" class="active">Villes</a></li>
+              <!-- <li><a href="deals.html">Deals</a></li> -->
+            </ul>
+            <a class='menu-trigger'>
+              <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
         </div>
+      </div>
     </div>
   </header>
   <!-- ***** Header Area End ***** -->
@@ -81,47 +99,41 @@ https://templatemo.com/tm-580-woox-travel
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <h4>Discover Our Weekly Offers</h4>
-          <h2>Amazing Prices &amp; More</h2>
+          <h4>Explorez les villes emblématiques</h4>
+          <h2>Leurs richesses culturelles et leurs paysages uniques</h2>
         </div>
       </div>
     </div>
   </div>
   <!-- ***** Main Banner Area End ***** -->
 
-  <?php 
-  require 'conn/db.php';
-  $query ="select * from pays";
-  $result = mysqli_query($conn,$query);
-  ?>
-
   <div class="search-form">
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <form id="search-form" name="gs" method="submit" role="search" action="#">
+          <form id="search-form" name="gs" method="Post" role="search" action="villes.php">
             <div class="row">
               <div class="col-lg-2">
-                <h4>Rechercher par Pays:</h4>
+                <h4>Pays:</h4>
               </div>
               <div class="col-lg-4">
                 <fieldset>
                   <select name="Location" class="form-select" aria-label="Default select example" id="chooseLocation"
-                    onChange="this.form.click()">
-                    <option selected>Pays</option>
+                    onChange="this.form.click()" required>
+                    <option value="" selected>Pays</option>
                     <?php
-                      $query = "SELECT id_continent, nom FROM pays";
-                      $result = mysqli_query($conn, $query);
-                      while ($row = mysqli_fetch_assoc($result)) {
-                        echo "<option value='" . $row['id_pays'] . "'>" . $row['nom'] . "</option>";
-                      }
-                    ?>
+                       $pays_query = "SELECT id_pays, nom FROM pays";
+                       $pays_result = mysqli_query($conn, $pays_query);
+                       while ($pays = mysqli_fetch_assoc($pays_result)) {
+                        echo "<option value='" . $pays['id_pays'] . "'>" . $pays['nom'] . "</option>";
+                       }
+                     ?>
                   </select>
                 </fieldset>
               </div>
               <div class="col-lg-2">
                 <fieldset>
-                  <button class="border-button">Rechercher</button>
+                  <button type="submit" class="border-button">Rechercher</button>
                 </fieldset>
               </div>
             </div>
@@ -131,44 +143,48 @@ https://templatemo.com/tm-580-woox-travel
     </div>
   </div>
 
-  <?php 
-  require 'conn/db.php';
-  $query ="select * from ville";
-  $result = mysqli_query($conn,$query);
-  ?>
 
   <div class="amazing-deals">
     <div class="container">
       <div class="row">
 
-      <?php while ($data = mysqli_fetch_assoc(result: $result)) {?>
-
+        <?php
+      if ($villes_result && mysqli_num_rows($villes_result) > 0) {
+        while ($ville = mysqli_fetch_assoc($villes_result)) { ?>
         <div class="col-lg-6 col-sm-6">
-          <div class="item">
+          <div class="item mb-4">
             <div class="row">
               <div class="col-lg-6">
                 <div class="image">
-                  <img src="<?=$data['imageURL']?>" alt="">
+                  <img src="<?= $ville['imageURL'] ?>" alt="Ville">
                 </div>
               </div>
               <div class="col-lg-6 align-self-center">
                 <div class="content">
-                  <h4><?=$data['nom']?></h4>
+                  <h4>
+                    <?= $ville['nom'] ?>
+                  </h4>
                   <div class="row">
                     <div class="col-6">
                       <i class="fa fa-map"></i>
-                      <span class="list" style="color: black;"><?=$data['type']?></span>
+                      <span class="list text-dark">
+                        <?= $ville['type'] ?>
+                      </span>
                     </div>
                   </div>
-                  <p style="color: black;"><?=$data['description']?></p>
+                  <p class="text-dark">
+                    <?= $ville['description'] ?>
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-      <?php  
-      }?>
+        <?php }
+      } else {
+        echo "<p class='text-danger text-center'>Aucune ville trouvée.</p>";
+      }
+      ?>
       </div>
     </div>
   </div>
@@ -177,7 +193,7 @@ https://templatemo.com/tm-580-woox-travel
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <p>Copyright © 2024 <a href="#">Fatima-Ezzahra Aloyane</a> Company. All rights reserved. 
+          <p>Copyright © 2024 <a href="#">Fatima-Ezzahra Aloyane</a> Company. All rights reserved.
         </div>
       </div>
     </div>

@@ -272,19 +272,18 @@ https://templatemo.com/tm-580-woox-travel
                         <h4 style="color: white;"><?=$data['nom']?></h4>
                         <span>Afrique</span>
                         <div class="main-button">
-                          <a href="about.html">Supprimer</a>
+                          <a href="#">Supprimer</a>
                         </div>
-                        <div class="main-button" style="left:65%;">
-                          <a href="about.html">Ajouter</a>
+                        <div class="main-button" style="left:64%;">
+                          <a href="#">Modifier</a>
                         </div>
                         <p><?=$data['description']?></p>
                         <ul class="info">
                           <li><i class="fa fa-user"></i> <?=$data['population']?>M personne</li>
                           <li><i class="fa fa-globe"></i> <?=$data['langues']?></li>
-                          <!-- <li><i class="fa fa-home"></i> </li> -->
                         </ul>
                         <div class="text-button">
-                          <a href="about.html">Need Directions ? <i class="fa fa-arrow-right"></i></a>
+                          <a href="villes.php">Plus d'informations ?<i class="fa fa-arrow-right"></i></a>
                         </div>
                       </div>
                     </div>
@@ -315,22 +314,6 @@ https://templatemo.com/tm-580-woox-travel
       </div>
     </div>
   </div>
-
-  <!-- <div class="call-to-action">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8">
-          <h2>Are You Looking To Travel ?</h2>
-          <h4>Make A Reservation By Clicking The Button</h4>
-        </div>
-        <div class="col-lg-4">
-          <div class="border-button">
-            <a href="reservation.html">Book Yours Now</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
 
   <footer>
     <div class="container">

@@ -53,7 +53,7 @@ VALUES
 -- Insertion des villes associées aux pays
 INSERT INTO ville (nom, description, type, id_pays, imageURL)  
 VALUES  
-('Rabat', 'Capitale administrative du Maroc', 'Capitale', 1),  
+('Rabat', 'Capitale administrative du Maroc', 'Capitale', 1, 'https://strongcitiesnetwork.org/wp-content/uploads/2023/05/R-3.jpg'),  
 ('Casablanca', 'Ville économique du Maroc', 'Autre', 1),  
 ('Safi', 'Ville portuaire connue pour la pêche et la poterie', 'Autre', 1),
 ('Marrakech', 'Ville touristique célèbre pour sa médina et ses souks', 'Autre', 1), 

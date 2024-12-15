@@ -35,21 +35,23 @@ if (isset($_POST["ajoutePays"])) {
 
 if (isset($_POST["ajouteVille"])) {
 
-    if (!empty($_POST['nom']) && !empty($_POST['type']) && !empty($_POST['id_pays'])) {
+    if (!empty($_POST['nom']) && !empty($_POST['description']) && !empty($_POST['type']) && !empty($_POST['id_pays']) && !empty($_POST['imageURL'])) {
         $nom = $_POST['nom'];
+        $description = $_POST['description'];
         $type = $_POST['type'];
         $id_pays = $_POST['id_pays'];
+        $imageURL = $_POST['imageURL'];
 
-        $sql = "INSERT INTO `ville` (`nom`, `type`, `id_pays`) 
-                VALUES ('$nom', '$type', '$id_pays')";
+        $sql = "INSERT INTO ville (nom, description, type, id_pays, imageURL) 
+                VALUES ('$nom', '$description', '$type', '$id_pays', '$imageURL')";
 
-        $resulta = mysqli_query($connect, $sql);
+        $resulta = mysqli_query($conn, $sql);
 
         if ($resulta) {
             header("Location: ajout.php?msg=ajouter");
             exit();
         } else {
-            echo "Échec : " . mysqli_error($connect);
+            echo "Échec : " . mysqli_error($conn);
         }
     } else {
         echo "Veuillez remplir tous les champs obligatoires.";

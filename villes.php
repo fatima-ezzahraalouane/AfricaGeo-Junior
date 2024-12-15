@@ -157,7 +157,7 @@ https://templatemo.com/tm-580-woox-travel
                   <div class="row">
                     <div class="col-6">
                       <i class="fa fa-map"></i>
-                      <span class="list"><?=$data['type']?></span>
+                      <span class="list" style="color: black;"><?=$data['type']?></span>
                     </div>
                   </div>
                   <p style="color: black;"><?=$data['description']?></p>

@@ -315,6 +315,7 @@ https://templatemo.com/tm-580-woox-travel
     </div>
   </div>
 
+  <!-- Footer -->
   <footer>
     <div class="container">
       <div class="row">

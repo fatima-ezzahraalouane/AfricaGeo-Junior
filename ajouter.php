@@ -1,7 +1,7 @@
 <?php
 
 
-include './cnxdb.php';
+require './conn/db.php';
 
 if (isset($_POST["ajoutePays"])) {
     
@@ -179,6 +179,10 @@ https://templatemo.com/tm-580-woox-travel
             <input type="text" class="form-control" id="langues" name="langues" placeholder="Langues">
           </div>
           <div class="mb-3">
+            <label for="imageURL" class="form-label">Image</label>
+            <input type="url" class="form-control" id="imageURL" name="imageURL" placeholder="URL de l'Image">
+          </div>
+          <div class="mb-3">
             <label for="description" class="form-label">Description</label>
             <!-- <input type="text" class="form-control" id="description" name="description" placeholder="Description"> -->
             <textarea for="description" name="description" id="description" class="form-control" placeholder="Votre description ..."></textarea>
@@ -224,6 +228,10 @@ https://templatemo.com/tm-580-woox-travel
                   }
               ?>
             </select>
+          </div>
+          <div class="mb-3">
+            <label for="imageURL" class="form-label">Image</label>
+            <input type="url" class="form-control" id="imageURL" name="imageURL" placeholder="URL de l'Image">
           </div>
           <div class="mb-3">
             <label for="type" class="form-se">Type</label>

@@ -63,7 +63,7 @@ VALUES
 -- Insertion des villes associées aux pays
 INSERT INTO ville (nom, description, type, id_pays)
 VALUES
-('Alger', 'Capitale de l\'Algérie', 'Capitale', 2),  
+('Alger', 'Capitale de l''Algérie', 'Capitale', 2),  
 ('Oran', 'Ville portuaire', 'Autre', 2),  
 ('Constantine', 'Ville historique', 'Autre', 2),  
 ('Annaba', 'Ville côtière', 'Autre', 2), 
@@ -73,12 +73,12 @@ VALUES
 
 INSERT INTO ville (nom, description, type, id_pays)
 VALUES
-('Tunis', 'Capitale de la Tunisie', 'Capitale', 3),  
-('Sfax', 'Ville portuaire', 'Autre', 3),  
-('Sousse', 'Ville touristique', 'Autre', 3),  
-('Monastir', 'Ville côtière', 'Autre', 3),  
-('Gabès', 'Ville du sud', 'Autre', 3),  
-('Bizerte', 'Ville du nord', 'Autre', 3); 
+('Tunis', 'Capitale de la Tunisie', 'Capitale', 3, 'https://www.evenement.com/wp-content/uploads/2024/10/Tunis.png'),  
+('Sfax', 'Ville portuaire', 'Autre', 3, 'https://medcities.org/wp-content/uploads/2021/05/miniatura-sfax.jpg'),  
+('Sousse', 'Ville touristique', 'Autre', 3, 'https://tunisie.co/uploads/images/content/medinadesouss-200919-1.jpg'),  
+('Monastir', 'Ville côtière', 'Autre', 3, 'https://www.okvoyage.com/wp-content/uploads/2019/12/monastir.jpg'),  
+('Gabès', 'Ville du sud', 'Autre', 3, 'https://live.staticflickr.com/65535/52847994363_ae445b7295_b.jpg'),  
+('Bizerte', 'Ville du nord', 'Autre', 3, 'https://acte.tn/sites/default/files/2021-09/bizerte_0.jpggit'); 
 
 
 INSERT INTO ville (nom, description, type, id_pays)  

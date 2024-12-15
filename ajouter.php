@@ -1,3 +1,66 @@
+<?php
+
+
+include './cnxdb.php';
+
+if (isset($_POST["ajoutePays"])) {
+    
+    if (!empty($_POST['nom']) && !empty($_POST['population']) && !empty($_POST['langues']) && !empty($_POST['imageURL']) && !empty($_POST['id_continent']) && !empty($_POST['description'])) {
+        $nom = $_POST['nom'];
+        $population = $_POST['population'];
+        $langues = $_POST['langues'];
+        $imageURL = $_POST['imageURL'];
+        $id_continent = $_POST['id_continent'];
+        $description = $_POST['description'];
+
+      
+        $sql = "INSERT INTO pays (nom, population, langues, imageURL, id_continent, description) 
+                VALUES ('$nom', '$population', '$langues', '$imageURL', '$id_continent', '$description')";
+
+       
+        $result = mysqli_query($conn, $sql);
+
+        if ($result) {
+            header("Location: ajout.php?msg=ajouter");
+            exit();
+        } else {
+            echo "Échec : " . mysqli_error($conn);
+        }
+    } else {
+        echo "Veuillez remplir tous les champs obligatoires.";
+    }
+}
+
+
+
+if (isset($_POST["ajouteVille"])) {
+
+    if (!empty($_POST['nom']) && !empty($_POST['type']) && !empty($_POST['id_pays'])) {
+        $nom = $_POST['nom'];
+        $type = $_POST['type'];
+        $id_pays = $_POST['id_pays'];
+
+        $sql = "INSERT INTO `ville` (`nom`, `type`, `id_pays`) 
+                VALUES ('$nom', '$type', '$id_pays')";
+
+        $resulta = mysqli_query($connect, $sql);
+
+        if ($resulta) {
+            header("Location: ajout.php?msg=ajouter");
+            exit();
+        } else {
+            echo "Échec : " . mysqli_error($connect);
+        }
+    } else {
+        echo "Veuillez remplir tous les champs obligatoires.";
+    }
+}
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -62,8 +125,7 @@ https://templatemo.com/tm-580-woox-travel
             <ul class="nav">
               <li><a href="index.php">Home</a></li>
               <li><a href="ajouter.php" class="active">Ajouter</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="deals.html">Deals</a></li>
+              <li><a href="villes.php">Villes</a></li>
             </ul>
             <a class='menu-trigger'>
               <span>Menu</span>
@@ -132,7 +194,7 @@ https://templatemo.com/tm-580-woox-travel
               ?>
             </select>
           </div>
-          <button type="submit" class="btn w-100" style="background:#22b3c1;">Submit</button>
+          <button type="submit" name="ajoutePays" class="btn w-100" style="background:#22b3c1;">Submit</button>
         </form>
       </div>
 
@@ -168,7 +230,7 @@ https://templatemo.com/tm-580-woox-travel
               <option value="autre">Autre</option>
             </select>
           </div>
-          <button type="submit" class="btn w-100" style="background:#22b3c1;">Submit</button>
+          <button type="submit" name="ajouteVille" class="btn w-100" style="background:#22b3c1;">Submit</button>
         </form>
       </div>
     </div>
@@ -179,9 +241,7 @@ https://templatemo.com/tm-580-woox-travel
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <p>Copyright © 2036 <a href="#">WoOx Travel</a> Company. All rights reserved.
-            <br>Design: <a href="https://templatemo.com" target="_blank" title="free CSS templates">TemplateMo</a>
-          </p>
+          <p>Copyright © 2024 <a href="#">Fatima-Ezzahra Aloyane</a> Company. All rights reserved. 
         </div>
       </div>
     </div>

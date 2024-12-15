@@ -1137,7 +1137,7 @@ About Page Style
 
 .about-main-content {
   margin-top: 70px;
-  background-image: url(../images/about-content-bg.jpg);
+  background-image: url(../images/maroc.jpg);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
@@ -2024,7 +2024,7 @@ Reservation Page Style
 */
 
 .second-page-heading {
-  background-image: url(../images/heading-bg-02.jpg);
+  background-image: url(../images/maroc.jpg);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;

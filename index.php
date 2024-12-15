@@ -61,8 +61,8 @@ https://templatemo.com/tm-580-woox-travel
                     <ul class="nav">
                         <li><a href="index.php" class="active">Home</a></li>
                         <li><a href="ajouter.php">Ajouter</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="deals.html">Deals</a></li>
+                        <li><a href="villes.php">Villes</a></li>
+                        <!-- <li><a href="deals.html">Deals</a></li> -->
                     </ul>   
                     <a class='menu-trigger'>
                         <span>Menu</span>
@@ -108,7 +108,7 @@ https://templatemo.com/tm-580-woox-travel
                       </div>
                       <div class="col-lg-3 col-sm-6 col-6">
                         <div class="main-button">
-                          <a href="#">Explore More</a>
+                          <a href="villes.php">Explore More</a>
                         </div>
                       </div>
                     </div>
@@ -143,7 +143,7 @@ https://templatemo.com/tm-580-woox-travel
                       </div>
                       <div class="col-lg-3 col-sm-6 col-6">
                         <div class="main-button">
-                          <a href="#">Explore More</a>
+                          <a href="villes.php">Explore More</a>
                         </div>
                       </div>
                     </div>
@@ -178,7 +178,7 @@ https://templatemo.com/tm-580-woox-travel
                       </div>
                       <div class="col-lg-3 col-sm-6 col-6">
                         <div class="main-button">
-                          <a href="#">Explore More</a>
+                          <a href="villes.php">Explore More</a>
                         </div>
                       </div>
                     </div>
@@ -213,7 +213,7 @@ https://templatemo.com/tm-580-woox-travel
                       </div>
                       <div class="col-lg-3 col-sm-6 col-6">
                         <div class="main-button">
-                          <a href="#">Explore More</a>
+                          <a href="villes.php">Explore More</a>
                         </div>
                       </div>
                     </div>

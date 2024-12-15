@@ -61,10 +61,9 @@ https://templatemo.com/tm-580-woox-travel
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
               <li><a href="index.php">Home</a></li>
+              <li><a href="ajouter.php" class="active">Ajouter</a></li>
               <li><a href="about.html">About</a></li>
               <li><a href="deals.html">Deals</a></li>
-              <li><a href="reservation.html">Reservation</a></li>
-              <li><a href="ajouter.php" class="active">Ajouter</a></li>
             </ul>
             <a class='menu-trigger'>
               <span>Menu</span>
@@ -76,6 +75,18 @@ https://templatemo.com/tm-580-woox-travel
     </div>
   </header>
   <!-- ***** Header Area End ***** -->
+
+  <div class="page-heading">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h4>Discover Our Weekly Offers</h4>
+          <h2>Amazing Prices &amp; More</h2>
+          <!-- <div class="border-button"><a href="about.html">Discover More</a></div> -->
+        </div>
+      </div>
+    </div>
+  </div>
 
   <?php 
   require 'conn/db.php';
@@ -93,19 +104,20 @@ https://templatemo.com/tm-580-woox-travel
           <h1 class="text-center text-white">Pays</h1>
           <div class="mb-3">
             <label for="nom" class="form-label">Nom</label>
-            <input type="text" class="form-control" id="nom" name="nom">
+            <input type="text" class="form-control" id="nom" name="nom" placeholder="Nom">
           </div>
           <div class="mb-3">
             <label for="population" class="form-label">Population</label>
-            <input type="number" class="form-control" id="population" name="population">
+            <input type="number" class="form-control" id="population" name="population" placeholder="Population">
           </div>
           <div class="mb-3">
             <label for="langues" class="form-label">Langues</label>
-            <input type="text" class="form-control" id="langues" name="langues">
+            <input type="text" class="form-control" id="langues" name="langues" placeholder="Langues">
           </div>
           <div class="mb-3">
             <label for="description" class="form-label">Description</label>
-            <input type="text" class="form-control" id="description" name="description">
+            <!-- <input type="text" class="form-control" id="description" name="description" placeholder="Description"> -->
+            <textarea for="description" name="description" id="description" class="form-control" placeholder="Votre description ..."></textarea>
           </div>
           <div class="mb-3">
             <label for="id_continent">Continent</label>
@@ -130,11 +142,12 @@ https://templatemo.com/tm-580-woox-travel
           <h1 class="text-center text-white">Villes</h1>
           <div class="mb-3">
             <label for="nom" class="form-label">Nom</label>
-            <input type="text" class="form-control" id="nom" name="nom">
+            <input type="text" class="form-control" id="nom" name="nom" placeholder="Nom">
           </div>
           <div class="mb-3">
             <label for="description" class="form-label">Description</label>
-            <input type="text" class="form-control" id="description" name="description">
+            <!-- <input type="text" class="form-control" id="description" name="description" placeholder="Description"> -->
+             <textarea for="description" name="description" id="description" class="form-control" placeholder="Votre description ..."></textarea>
           </div>
           <div class="mb-3">
             <label for="id_pays">Pays</label>

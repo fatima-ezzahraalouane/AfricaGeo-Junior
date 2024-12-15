@@ -60,10 +60,9 @@ https://templatemo.com/tm-580-woox-travel
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
                         <li><a href="index.php" class="active">Home</a></li>
+                        <li><a href="ajouter.php">Ajouter</a></li>
                         <li><a href="about.html">About</a></li>
                         <li><a href="deals.html">Deals</a></li>
-                        <li><a href="reservation.html">Reservation</a></li>
-                        <li><a href="ajouter.php">Ajouter</a></li>
                     </ul>   
                     <a class='menu-trigger'>
                         <span>Menu</span>

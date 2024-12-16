@@ -35,3 +35,10 @@ Une école souhaite enrichir son programme pédagogique avec un outil interactif
   - Connecter la base de données pour afficher dynamiquement les informations des pays.
 
 ---
+
+# Lien de planification
+https://github.com/users/fatima-ezzahraalouane/projects/7
+
+
+# Lien de présentation
+https://www.canva.com/design/DAGZNqBs7CY/hmt2tntH6l_iUab2RVTvEg/edit?utm_content=DAGZNqBs7CY&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
